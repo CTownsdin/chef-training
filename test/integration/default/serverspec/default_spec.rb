@@ -7,3 +7,12 @@ describe 'workstation::default' do
     skip 'Replace this with meaningful tests'
   end
 end
+
+describe "workstation::default" do
+
+  describe package('tree') do
+    it { should be_installed }
+  end
+
+end
+   
