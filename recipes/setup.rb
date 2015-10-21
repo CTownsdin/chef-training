@@ -11,10 +11,17 @@ package 'tree' do
 end
 
 file "/etc/motd" do
-  content "Property of ... Christian Townsdin"
+  content "Property of ... 
+
+    IPADDRESS: #{node["ipaddress"]}
+    HOSTNAME : #{node["hostname"]}
+    MEMORY   : #{node["memory"]["total"]}
+    CPU      : #{node["cpu"]["0"]["mhz"]}
+
+  ... Christian Townsdin"
+
   owner 'root'
   group 'root'
-  mode '0666'
-  action :create
+  mode '0644'
 end
 
