@@ -13,6 +13,33 @@ describe "workstation::default" do
   describe package('tree') do
     it { should be_installed }
   end
+  
+#  describe package('httpd') do
+#    it { should be_installed }
+#  end
+
+  describe package('git') do
+    it { should be_installed }
+  end
+
+  describe package('nano') do
+    it { should be_installed }
+  end
+
+  describe file('/etc/motd') do
+    it { should exist }
+  end
+
+  describe file('/etc/motd') do
+    it { should be_file }
+  end
+
+#  ['tree', 'git', 'nano'].each do |pkg|
+#    describe(pkg) do
+#      it { should be_installed }
+#    end
+#    TODO - Fix this syntax
+
 
 end
    
