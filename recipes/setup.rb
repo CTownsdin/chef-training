@@ -10,18 +10,11 @@ package 'tree' do
   action :install
 end
 
-file "/etc/motd" do
-  content "Property of ... 
+template "/etc/motd" do
+  source "motd.erb"
 
-    IPADDRESS: #{node["ipaddress"]}
-    HOSTNAME : #{node["hostname"]}
-    MEMORY   : #{node["memory"]["total"]}
-    CPU      : #{node["cpu"]["0"]["mhz"]}
-
-  ... Christian Townsdin"
-
+  mode '0644'
   owner 'root'
   group 'root'
-  mode '0644'
 end
 
